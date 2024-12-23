@@ -68,5 +68,23 @@ def create_adjacency_matrix(edges, vertices):
 if __name__ == "__main__":
     n, m = map(int, input().split())
     edges = [tuple(map(int, input().split())) for _ in range(n)]
+    # USING create_adjacency_matrix НУМЕРАЦИЯ С 0 (ОТКУДА,КУДА )
     adj_matrix = create_adjacency_matrix(edges, m)
     print(f"{check_reflexivity(adj_matrix, m)}\n{check_transitivity(adj_matrix, m)}\n{check_symmetry(adj_matrix, m)}")
+
+
+    # USING build_adjacency_matrix НУМЕРАЦИЯ С 1 (КУДА, ОТКУДА)
+    # adjacency_matrix = build_adjacency_matrix(m, edges)
+    # print("Матрица смежности:")
+    # print_matrix(adjacency_matrix)
+    # if is_symmetric(adjacency_matrix, m):
+    #     symmetry_type = "Cимметричное"
+    # elif is_antisymmetric(adjacency_matrix, m):
+    #     symmetry_type = "Антисимметричное"
+    # else:
+    #     symmetry_type = "Несимметричное"
+    # reflexivity_type = check_reflexivity(adjacency_matrix, m)
+    # transitivity_type = check_transitivity(adjacency_matrix, m)
+    # print(f"{reflexivity_type}")
+    # print(f"{transitivity_type}")
+    # print(f"{symmetry_type}")
